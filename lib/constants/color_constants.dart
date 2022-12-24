@@ -9,13 +9,15 @@ class ColorConstants {
   static const steelblue = Color(0xFFA7BBDC);
   static const pursianblue = Color(0xFF233858);
   static const coffee = Color(0xFF281815);
-  static const marroon = Color(0xFF511520);
+  static const marroon = Color(0xFF6b2216);
   static const beige = Color(0xFFF2F3D9);
 
   static List<Color> cardsColor = [
     ColorConstants.steelblue,
     ColorConstants.ferngreen,
-    ColorConstants.ivory
+    ColorConstants.ivory,
+    ColorConstants.greenStamp,
+    ColorConstants.purpleStamp,
   ];
 
   //letters
@@ -23,4 +25,6 @@ class ColorConstants {
   static const greenStamp = Color(0xFF9ba493);
   static const brownStamp = Color(0xFF493c2f);
   static const purpleStamp = Color(0xFFa18b85);
+
+  static const grassgreen = Color(0xff667436);
 }

@@ -13,35 +13,59 @@ class LetterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection("Letters").snapshots(),
-        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(
-                color: ColorConstants.pinetree,
-              ),
-            );
-          }
-          if (snapshot.hasData) {
-            return GridView.builder(
-              itemBuilder: (context, index) {
-                return letter(() {}, snapshot.data!.docs[index]);
-              },
-              itemCount: snapshot.data!.docs.length,
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-            );
-          }
-          return Text("There is no letters avaliable",
-              style: GoogleFonts.nunito(
-                color: ColorConstants.coffee,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ));
-        },
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: ColorConstants.pursianblue,
+          ),
+        ),
+        title: Text(
+          "Letter",
+          style: GoogleFonts.roboto(
+            color: ColorConstants.pursianblue,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
+      body: Container(),
     );
   }
 }
+// Container(
+//       child: StreamBuilder<QuerySnapshot>(
+//         stream: FirebaseFirestore.instance.collection("Letters").snapshots(),
+//         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+//           if (snapshot.connectionState == ConnectionState.waiting) {
+//             return const Center(
+//               child: CircularProgressIndicator(
+//                 color: ColorConstants.brownStamp,
+//               ),
+//             );
+//           }
+//           if (snapshot.hasData) {
+//             return GridView.builder(
+//               itemBuilder: (context, index) {
+//                 return letter(() {}, snapshot.data!.docs[index]);
+//               },
+//               itemCount: snapshot.data!.docs.length,
+//               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                 crossAxisCount: 4,
+//               ),
+//             );
+//           }
+//           return Text("There is no letters avaliable",
+//               style: GoogleFonts.nunito(
+//                 color: ColorConstants.coffee,
+//                 fontSize: 16,
+//                 fontWeight: FontWeight.bold,
+//               ));
+//         },
+//       ),
+//     );

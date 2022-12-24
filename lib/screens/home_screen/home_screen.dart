@@ -22,14 +22,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               "Lettre",
               style: GoogleFonts.roboto(
-                  color: ColorConstants.pinetree,
+                  color: ColorConstants.pursianblue,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
@@ -38,13 +38,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.pushNamed(context, RoutesConstants.inboxscreen);
                 },
                 icon: Image.asset(
-                  ImageConstants.handmaiden_pin,
+                  ImageConstants.jordan_stamp,
+                  scale: 10,
                 ))
           ],
         ),
       ),
       body: Container(
-        color: Colors.black,
+        color: Colors.white,
         child: Stack(
           children: [
             Column(
@@ -57,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: MediaQuery.of(context).size.height * 0.6,
                     width: 500,
                     decoration: const BoxDecoration(
-                      color: ColorConstants.beige,
+                      color: ColorConstants.steelblue,
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
                       ),

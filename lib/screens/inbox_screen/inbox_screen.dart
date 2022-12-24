@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lettre/constants/color_constants.dart';
+import 'package:lettre/constants/routes_constants.dart';
 import 'package:lettre/locator.dart';
 import 'package:lettre/shared_widgets/letter.dart';
 
@@ -21,20 +22,20 @@ class _InboxScreenState extends State<InboxScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: ColorConstants.ivory,
+        backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: Icon(
             Icons.arrow_back,
-            color: ColorConstants.pinetree,
+            color: ColorConstants.pursianblue,
           ),
         ),
         title: Text(
           "Letters Recieved",
           style: GoogleFonts.roboto(
-            color: ColorConstants.pinetree,
+            color: ColorConstants.pursianblue,
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
@@ -67,11 +68,15 @@ class _InboxScreenState extends State<InboxScreen> {
                 if (snapshot.hasData) {
                   return GridView.builder(
                     itemBuilder: (context, index) {
-                      return letter(() {}, snapshot.data!.docs[index]);
+                      return letter(() {
+                        Navigator.pushNamed(
+                            context, RoutesConstants.letterscreen);
+                      }, snapshot.data!.docs[index]);
                     },
                     itemCount: snapshot.data!.docs.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2),
+                      crossAxisCount: 2,
+                    ),
                   );
                 }
                 return Text("There is no letters avaliable",

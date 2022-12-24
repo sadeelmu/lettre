@@ -13,7 +13,7 @@ Widget letterFront(Function()? onTap, QueryDocumentSnapshot doc) {
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: ColorConstants.ivory,
+        color: Colors.black,
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
       child: Column(
@@ -24,36 +24,31 @@ Widget letterFront(Function()? onTap, QueryDocumentSnapshot doc) {
             children: [
               Text(
                 "POSTE",
-                style: locator<CustomTextStyle>().synpoStyle(
-                    color: Colors.black,
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold),
+                style: GoogleFonts.roboto(
+                  color: ColorConstants.ivory,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-              Image.asset(ImageConstants.jordan_stamp),
+              Image.asset(
+                ImageConstants.jordan_stamp,
+                scale: 30,
+              ),
             ],
           ),
           Text(
-            doc["letter_to"],
+            "to: ${doc["letter_to"]}",
             style: GoogleFonts.roboto(
-              color: ColorConstants.marroon,
+              color: ColorConstants.ivory,
               fontSize: 18,
               fontWeight: FontWeight.w500,
             ),
           ),
           Text(
-            doc["letter_content"],
+            "from: ${doc["letter_from"]}",
             style: GoogleFonts.roboto(
-              color: ColorConstants.marroon,
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
-            ),
-            overflow: TextOverflow.ellipsis,
-          ),
-          Text(
-            doc["letter_from"],
-            style: GoogleFonts.roboto(
-              color: ColorConstants.marroon,
-              fontSize: 18,
+              color: ColorConstants.ivory,
+              fontSize: 16,
               fontWeight: FontWeight.w500,
             ),
           ),
