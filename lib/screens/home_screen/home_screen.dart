@@ -7,8 +7,10 @@ import 'package:lettre/constants/routes_constants.dart';
 import 'package:lettre/core/utils/custom_text_style.dart';
 import 'package:lettre/locator.dart';
 import 'package:lettre/routes.dart';
+import 'package:lettre/screens/letter_screen/letter_editor.dart';
 
 import '../../constants/image_constants.dart';
+import '../../shared_widgets/button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -50,6 +52,13 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              "Add Note",
+              style: GoogleFonts.roboto(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Stack(
@@ -70,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                       color: Colors.white,
                     ),
+                    child: NoteEditor(),
                   ),
                   Positioned(
                     right: 10,
@@ -87,6 +97,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+            ),
+            CustomButton(
+              buttonLabel: "Add Note",
+              buttonCallBack: () {},
+              labelColor: Colors.white,
             ),
           ],
         ),
