@@ -8,4 +8,8 @@ class ImageConstants {
   static const jordan_stamp_three = "${_path}/stamp_jordan_three.jpeg";
   static const jordan_stamp_four = "${_path}/stamp_jordan_four.jpeg";
   static const jordan_stamp_five = "${_path}/stamp_jordan_five.jpeg";
+  static const tattoo = "${_path}/tattoo.JPG";
+  static const tattoo_circular = "${_path}/tattoo_circular.JPG";
+  static const envelope = "${_path}/envelope_one.JPG";
+  static const heart = "${_path}/heart.png";
 }

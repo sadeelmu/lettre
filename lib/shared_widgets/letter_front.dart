@@ -23,7 +23,7 @@ Widget letterFront(Function()? onTap, QueryDocumentSnapshot doc) {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "POSTE",
+                "LETTER",
                 style: GoogleFonts.roboto(
                   color: ColorConstants.ivory,
                   fontSize: 16,

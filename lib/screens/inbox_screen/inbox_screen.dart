@@ -6,8 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lettre/constants/color_constants.dart';
 import 'package:lettre/constants/routes_constants.dart';
 import 'package:lettre/locator.dart';
+import 'package:lettre/screens/letter_screen/extract_letter.dart';
+import 'package:lettre/screens/letter_screen/letter_reader.dart';
+import 'package:lettre/screens/letter_screen/letter_screen.dart';
 import 'package:lettre/shared_widgets/letter.dart';
 
+import '../../constants/image_constants.dart';
 import '../../core/utils/custom_text_style.dart';
 
 class InboxScreen extends StatefulWidget {
@@ -29,16 +33,26 @@ class _InboxScreenState extends State<InboxScreen> {
           },
           icon: Icon(
             Icons.arrow_back,
-            color: ColorConstants.pursianblue,
+            color: Colors.black,
           ),
         ),
-        title: Text(
-          "Letters Recieved",
-          style: GoogleFonts.roboto(
-            color: ColorConstants.pursianblue,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Letters To Chloe",
+              style: GoogleFonts.roboto(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Image.asset(
+                ImageConstants.tattoo,
+              ),
+            ),
+          ],
         ),
       ),
       body: Column(
@@ -46,12 +60,16 @@ class _InboxScreenState extends State<InboxScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 10),
-          Text(
-            "View Letter from your loved ones",
-            style: GoogleFonts.roboto(
-              color: ColorConstants.pursianblue,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: Text(
+              textAlign: TextAlign.center,
+              "View Letters:",
+              style: GoogleFonts.roboto(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           const SizedBox(height: 20),
@@ -69,8 +87,13 @@ class _InboxScreenState extends State<InboxScreen> {
                   return GridView.builder(
                     itemBuilder: (context, index) {
                       return letter(() {
-                        Navigator.pushNamed(
-                            context, RoutesConstants.letterscreen);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                LetterReaderScreen(snapshot.data!.docs[index]),
+                          ),
+                        );
                       }, snapshot.data!.docs[index]);
                     },
                     itemCount: snapshot.data!.docs.length,

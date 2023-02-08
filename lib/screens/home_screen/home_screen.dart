@@ -27,45 +27,66 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Lettre",
+              "Letters To Chloe",
               style: GoogleFonts.roboto(
-                  color: ColorConstants.pursianblue,
-                  fontSize: 30,
+                  color: Colors.black,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
             IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, RoutesConstants.inboxscreen);
-                },
-                icon: Image.asset(
-                  ImageConstants.jordan_stamp,
-                  scale: 10,
-                ))
+              onPressed: () {
+                Navigator.pushNamed(context, RoutesConstants.inboxscreen);
+              },
+              icon: Image.asset(
+                ImageConstants.tattoo,
+              ),
+            ),
           ],
         ),
       ),
       body: Container(
         color: Colors.white,
-        child: Stack(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * 0.6,
-                    width: 500,
-                    decoration: const BoxDecoration(
-                      color: ColorConstants.steelblue,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Stack(
+                children: [
+                  Container(
+                    height: 500,
+                    width: 550,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2.0, color: Colors.black),
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                    ),
+                  ),
+                  Container(
+                    height: 490,
+                    width: 480,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2.0, color: Colors.black),
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      color: Colors.white,
+                    ),
+                  ),
+                  Positioned(
+                    right: 10,
+                    bottom: 20,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(ImageConstants.heart),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),

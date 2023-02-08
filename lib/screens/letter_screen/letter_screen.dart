@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lettre/constants/color_constants.dart';
 
+import '../../constants/image_constants.dart';
 import '../../shared_widgets/letter.dart';
 
 class LetterScreen extends StatelessWidget {
@@ -22,16 +23,26 @@ class LetterScreen extends StatelessWidget {
           },
           icon: Icon(
             Icons.arrow_back,
-            color: ColorConstants.pursianblue,
+            color: Colors.black,
           ),
         ),
-        title: Text(
-          "Letter",
-          style: GoogleFonts.roboto(
-            color: ColorConstants.pursianblue,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "",
+              style: GoogleFonts.roboto(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Image.asset(
+                ImageConstants.tattoo,
+              ),
+            ),
+          ],
         ),
       ),
       body: Container(),
