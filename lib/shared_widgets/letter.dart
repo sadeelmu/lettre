@@ -38,20 +38,35 @@ Widget letter(Function()? onTap, QueryDocumentSnapshot doc) {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "To: ${doc["letter_to"]}",
+                        style: GoogleFonts.roboto(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10),
                   Text(
-                    "To: ${doc["letter_to"]}",
+                    "Written on: ${doc["letter_date"]}",
                     style: GoogleFonts.roboto(
                       color: Colors.black,
-                      fontSize: 18,
+                      fontSize: 15,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 50),
                   Text(
                     "From: ${doc["letter_from"]}",
                     style: GoogleFonts.roboto(
                       color: Colors.black,
-                      fontSize: 16,
+                      fontSize: 15,
                       fontWeight: FontWeight.w500,
                     ),
                   ),

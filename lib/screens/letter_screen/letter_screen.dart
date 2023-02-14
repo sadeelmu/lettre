@@ -49,34 +49,3 @@ class LetterScreen extends StatelessWidget {
     );
   }
 }
-// Container(
-//       child: StreamBuilder<QuerySnapshot>(
-//         stream: FirebaseFirestore.instance.collection("Letters").snapshots(),
-//         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-//           if (snapshot.connectionState == ConnectionState.waiting) {
-//             return const Center(
-//               child: CircularProgressIndicator(
-//                 color: ColorConstants.brownStamp,
-//               ),
-//             );
-//           }
-//           if (snapshot.hasData) {
-//             return GridView.builder(
-//               itemBuilder: (context, index) {
-//                 return letter(() {}, snapshot.data!.docs[index]);
-//               },
-//               itemCount: snapshot.data!.docs.length,
-//               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//                 crossAxisCount: 4,
-//               ),
-//             );
-//           }
-//           return Text("There is no letters avaliable",
-//               style: GoogleFonts.nunito(
-//                 color: ColorConstants.coffee,
-//                 fontSize: 16,
-//                 fontWeight: FontWeight.bold,
-//               ));
-//         },
-//       ),
-//     );

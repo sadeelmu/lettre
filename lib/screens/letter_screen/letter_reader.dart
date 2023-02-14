@@ -30,11 +30,12 @@ class _LetterReaderScreenState extends State<LetterReaderScreen> {
           ),
         ),
         title: FittedBox(
+          alignment: Alignment.center,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Letter from ${widget.doc["letter_from"]}",
+                "Letter from: ${widget.doc["letter_from"]}",
                 style: GoogleFonts.roboto(
                     color: Colors.black,
                     fontSize: 20,
@@ -45,7 +46,7 @@ class _LetterReaderScreenState extends State<LetterReaderScreen> {
                 icon: Image.asset(
                   ImageConstants.tattoo,
                 ),
-              ),
+              )
             ],
           ),
         ),
@@ -83,15 +84,15 @@ class _LetterReaderScreenState extends State<LetterReaderScreen> {
                           "To: ${widget.doc["letter_to"]}",
                           style: GoogleFonts.roboto(
                             color: Colors.black,
-                            fontSize: 20,
+                            fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         Text(
-                          "${widget.doc["letter_date"]}",
+                          "Written on: ${widget.doc["letter_date"]}",
                           style: GoogleFonts.roboto(
                             color: Colors.black,
-                            fontSize: 20,
+                            fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
                         )
@@ -102,7 +103,7 @@ class _LetterReaderScreenState extends State<LetterReaderScreen> {
                       "${widget.doc["letter_content"]}",
                       style: GoogleFonts.roboto(
                         color: Colors.black,
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -111,7 +112,7 @@ class _LetterReaderScreenState extends State<LetterReaderScreen> {
                       "From: ${widget.doc["letter_from"]}",
                       style: GoogleFonts.roboto(
                         color: Colors.black,
-                        fontSize: 20,
+                        fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
                     ),

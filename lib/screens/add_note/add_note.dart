@@ -68,7 +68,7 @@ class _AddNoteState extends State<AddNote> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Add Note",
+              "Write letter",
               style: GoogleFonts.roboto(
                   color: Colors.black,
                   fontSize: 20,
@@ -127,12 +127,13 @@ class _AddNoteState extends State<AddNote> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 40),
+                          SizedBox(height: 10),
                           Flexible(
+                            flex: 10,
                             child: TextField(
                               controller: _mainController,
                               keyboardType: TextInputType.multiline,
-                              maxLines: 5,
+                              maxLines: 500,
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'Letter content:',
@@ -143,8 +144,9 @@ class _AddNoteState extends State<AddNote> {
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
-                          SizedBox(height: 40),
+                          SizedBox(height: 10),
                           Flexible(
+                            flex: 2,
                             child: TextField(
                               controller: _fromController,
                               keyboardType: TextInputType.name,
@@ -181,7 +183,7 @@ class _AddNoteState extends State<AddNote> {
               ),
             ),
             CustomButton(
-              buttonLabel: "Add Note",
+              buttonLabel: "Send letter",
               buttonCallBack: () async {
                 FirebaseFirestore.instance.collection("Letters").add({
                   "letter_content": _mainController.text,

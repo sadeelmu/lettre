@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             CustomButton(
-              buttonLabel: "View Notes",
+              buttonLabel: "Read letters",
               buttonCallBack: () {
                 Navigator.pushNamed(context, RoutesConstants.inboxscreen);
               },
@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(height: 20),
             CustomButton(
-              buttonLabel: "Add Note",
+              buttonLabel: "Write letter",
               buttonCallBack: () {
                 Navigator.pushNamed(context, RoutesConstants.addnote);
               },
