@@ -3,4 +3,5 @@ class RoutesConstants {
   static const inboxscreen = "inboxscreen";
   static const letterscreen = "letterscreen";
   static const letterreader = "letterreader";
+  static const addnote = "addnote";
 }

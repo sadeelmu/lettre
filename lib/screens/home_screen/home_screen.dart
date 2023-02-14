@@ -7,7 +7,7 @@ import 'package:lettre/constants/routes_constants.dart';
 import 'package:lettre/core/utils/custom_text_style.dart';
 import 'package:lettre/locator.dart';
 import 'package:lettre/routes.dart';
-import 'package:lettre/screens/letter_screen/letter_editor.dart';
+import 'package:lettre/screens/add_note/letter_editor.dart';
 
 import '../../constants/image_constants.dart';
 import '../../shared_widgets/button.dart';
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Letters To Chloe",
+              "Letters To",
               style: GoogleFonts.roboto(
                   color: Colors.black,
                   fontSize: 20,
@@ -52,34 +52,36 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Add Note",
-              style: GoogleFonts.roboto(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Stack(
                 children: [
                   Container(
-                    height: 500,
-                    width: 550,
+                    height: 360,
+                    width: 450,
                     decoration: BoxDecoration(
                       border: Border.all(width: 2.0, color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                     ),
                   ),
                   Container(
-                    height: 490,
-                    width: 480,
+                    height: 350,
+                    width: 440,
                     decoration: BoxDecoration(
                       border: Border.all(width: 2.0, color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                       color: Colors.white,
                     ),
-                    child: NoteEditor(),
+                    child: Center(
+                      child: Text(
+                        "Demo App",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.roboto(
+                            color: Colors.black,
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
                   Positioned(
                     right: 10,
@@ -99,8 +101,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             CustomButton(
+              buttonLabel: "View Notes",
+              buttonCallBack: () {
+                Navigator.pushNamed(context, RoutesConstants.inboxscreen);
+              },
+              labelColor: Colors.white,
+            ),
+            SizedBox(height: 20),
+            CustomButton(
               buttonLabel: "Add Note",
-              buttonCallBack: () {},
+              buttonCallBack: () {
+                Navigator.pushNamed(context, RoutesConstants.addnote);
+              },
               labelColor: Colors.white,
             ),
           ],

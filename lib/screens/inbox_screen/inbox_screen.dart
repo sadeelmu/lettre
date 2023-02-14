@@ -40,7 +40,7 @@ class _InboxScreenState extends State<InboxScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Letters To Chloe",
+              "Letters To",
               style: GoogleFonts.roboto(
                   color: Colors.black,
                   fontSize: 20,

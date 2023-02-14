@@ -33,7 +33,7 @@ class _NoteEditorState extends State<NoteEditor> {
                   keyboardType: TextInputType.name,
                   decoration: const InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'To Who?',
+                    hintText: 'To who?',
                   ),
                   style: GoogleFonts.roboto(
                       color: Colors.black,
