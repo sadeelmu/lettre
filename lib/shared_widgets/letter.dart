@@ -43,7 +43,7 @@ Widget letter(Function()? onTap, QueryDocumentSnapshot doc) {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "To: ${doc["letter_to"]}",
+                        "${doc["letter_to"]}",
                         style: GoogleFonts.roboto(
                           color: Colors.black,
                           fontSize: 15,
@@ -54,16 +54,16 @@ Widget letter(Function()? onTap, QueryDocumentSnapshot doc) {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "Written on: ${doc["letter_date"]}",
+                    "written on: ${doc["letter_date"]}",
                     style: GoogleFonts.roboto(
                       color: Colors.black,
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 20),
                   Text(
-                    "From: ${doc["letter_from"]}",
+                    "${doc["letter_from"]}",
                     style: GoogleFonts.roboto(
                       color: Colors.black,
                       fontSize: 15,

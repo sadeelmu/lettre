@@ -81,7 +81,7 @@ class _LetterReaderScreenState extends State<LetterReaderScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "To: ${widget.doc["letter_to"]}",
+                          "${widget.doc["letter_to"]}",
                           style: GoogleFonts.roboto(
                             color: Colors.black,
                             fontSize: 16,
@@ -89,7 +89,7 @@ class _LetterReaderScreenState extends State<LetterReaderScreen> {
                           ),
                         ),
                         Text(
-                          "Written on: ${widget.doc["letter_date"]}",
+                          "written on: ${widget.doc["letter_date"]}",
                           style: GoogleFonts.roboto(
                             color: Colors.black,
                             fontSize: 16,
@@ -109,7 +109,7 @@ class _LetterReaderScreenState extends State<LetterReaderScreen> {
                     ),
                     SizedBox(height: 40),
                     Text(
-                      "From: ${widget.doc["letter_from"]}",
+                      " ${widget.doc["letter_from"]}",
                       style: GoogleFonts.roboto(
                         color: Colors.black,
                         fontSize: 16,

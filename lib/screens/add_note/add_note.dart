@@ -74,21 +74,22 @@ class _AddNoteState extends State<AddNote> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Stack(
                 children: [
                   Container(
-                    height: 500,
-                    width: 550,
+                    height: 600,
+                    width: 650,
                     decoration: BoxDecoration(
                       border: Border.all(width: 2.0, color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                     ),
                   ),
                   Container(
-                    height: 490,
-                    width: 480,
+                    height: 590,
+                    width: 580,
                     decoration: BoxDecoration(
                       border: Border.all(width: 2.0, color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -185,7 +186,7 @@ class _AddNoteState extends State<AddNote> {
             CustomButton(
               buttonLabel: "Send letter",
               buttonCallBack: () async {
-                FirebaseFirestore.instance.collection("Letters").add({
+                FirebaseFirestore.instance.collection("Notes").add({
                   "letter_content": _mainController.text,
                   "letter_to": _toController.text,
                   "letter_date": date,

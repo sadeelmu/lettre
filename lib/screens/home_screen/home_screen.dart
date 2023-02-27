@@ -57,16 +57,16 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Stack(
                 children: [
                   Container(
-                    height: 360,
-                    width: 450,
+                    height: 500,
+                    width: 600,
                     decoration: BoxDecoration(
                       border: Border.all(width: 2.0, color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                     ),
                   ),
                   Container(
-                    height: 350,
-                    width: 440,
+                    height: 490,
+                    width: 590,
                     decoration: BoxDecoration(
                       border: Border.all(width: 2.0, color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -74,11 +74,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        "Demo App",
+                        "Demo Project",
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
+                        style: locator<CustomTextStyle>().synpoStyle(
                             color: Colors.black,
-                            fontSize: 40,
+                            fontSize: 50,
                             fontWeight: FontWeight.bold),
                       ),
                     ),

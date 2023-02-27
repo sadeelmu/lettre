@@ -13,6 +13,17 @@ class CustomTextStyle {
         fontFamily: "Synkopy");
   }
 
+  TextStyle alYamani(
+      {Color color = Colors.black,
+      double fontSize = 14,
+      FontWeight fontWeight = FontWeight.w500}) {
+    return TextStyle(
+        fontSize: fontSize,
+        color: color,
+        fontWeight: fontWeight,
+        fontFamily: "AlYamani");
+  }
+
   static TextStyle mainTitle =
       GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.bold);
 

@@ -29,7 +29,7 @@ class _InboxScreenState extends State<InboxScreen> {
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushNamed(context, RoutesConstants.homescreen);
           },
           icon: Icon(
             Icons.arrow_back,
@@ -59,12 +59,12 @@ class _InboxScreenState extends State<InboxScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 10),
+          SizedBox(height: 20),
           Padding(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(10),
             child: Text(
               textAlign: TextAlign.center,
-              "View Letters:",
+              "Read letters <3",
               style: GoogleFonts.roboto(
                 color: Colors.black,
                 fontSize: 20,
@@ -72,11 +72,11 @@ class _InboxScreenState extends State<InboxScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
               stream:
-                  FirebaseFirestore.instance.collection("Letters").snapshots(),
+                  FirebaseFirestore.instance.collection("Notes").snapshots(),
               builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return Center(
