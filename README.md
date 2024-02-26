@@ -1,16 +1,9 @@
 # lettre
 
-A new Flutter project.
+A Flutter project where you can write letters like the old days to your loved ones and to yourself and keep them as a memory. 
 
-## Getting Started
+<img src="pictures/Lettre.png" alt="Lettre Screenshot" width="300">
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="pictures/Lettre1.png" alt="Lettre Screenshot" width="300">
+<img src="pictures/Lettre2.png" alt="Lettre Screenshot" width="300">
+<img src="pictures/Lettre3.png" alt="Lettre Screenshot" width="300">
